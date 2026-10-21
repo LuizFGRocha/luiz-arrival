@@ -3,6 +3,7 @@ const assert = require("node:assert/strict");
 const {
   generateDailyPuzzle,
   boardMatchesSolution,
+  countSolutions,
   DAILY_REMOVE,
   GRID_SIZE,
   BOX_ROWS,
@@ -65,6 +66,18 @@ describe("generateDailyPuzzle", () => {
       }
     }
     assert.equal(blanks, DAILY_REMOVE);
+  });
+
+  test("todo puzzle gerado tem solução única (sem ambiguidade)", () => {
+    for (let d = 1; d <= 31; d++) {
+      const dateKey = `2026-08-${String(d).padStart(2, "0")}`;
+      const { puzzle } = generateDailyPuzzle(dateKey);
+      assert.equal(
+        countSolutions(puzzle.map((r) => r.slice()), 2),
+        1,
+        `Puzzle de ${dateKey} deveria ter exatamente 1 solução`,
+      );
+    }
   });
 });
 

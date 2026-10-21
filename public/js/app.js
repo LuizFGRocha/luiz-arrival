@@ -4124,9 +4124,18 @@ function showAchievementToast(achievementIds) {
 const RELEASE_NOTES_SEEN_KEY = "luizos_release_notes_seen";
 const RELEASE_NOTES = [
   {
+    version: "2.26.1",
+    date: "21/10/2026",
+    isNew: true,
+    title: "Correção no Sudoku Diário: solução única garantida 📅🔢",
+    items: [
+      "🐛 Corrigido: o gerador do Sudoku Diário agora garante que todo puzzle tenha exatamente 1 solução única — acabaram os casos em que sobravam duas respostas possíveis e o jogo contava derrota.",
+    ],
+  },
+  {
     version: "2.26.0",
     date: "25/07/2026",
-    isNew: true,
+    isNew: false,
     title: "Títulos exclusivos, emblemas de time e preços fixos 🏷️⚽",
     items: [
       "🏷️ Títulos agora custam 500 LuizCoins fixos (eram escalonados a partir de 100) e passam a ser vendidos direto na Loja, na seção \"Títulos\" — a aba Título do Perfil virou só o seletor de qual já comprado fica ativo.",
