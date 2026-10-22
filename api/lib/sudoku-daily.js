@@ -76,16 +76,44 @@ function generateSolution(rng) {
   return board;
 }
 
+// Conta quantas soluções válidas existem para `board`, parando assim que
+// atinge `limit` (por padrão 2 — basta saber se a solução é única ou ambígua).
+function countSolutions(board, limit = 2) {
+  for (let i = 0; i < GRID_SIZE * GRID_SIZE; i++) {
+    const r = Math.floor(i / GRID_SIZE), c = i % GRID_SIZE;
+    if (board[r][c] !== 0) continue;
+    let count = 0;
+    for (const n of DIGITS) {
+      if (isValid(board, r, c, n)) {
+        board[r][c] = n;
+        count += countSolutions(board, limit - count);
+        board[r][c] = 0;
+        if (count >= limit) return count;
+      }
+    }
+    return count;
+  }
+  return 1;
+}
+
 function buildPuzzle(solution, removeCount, rng) {
   const puzzle = solution.map((row) => row.slice());
   const positions = shuffle(
     Array.from({ length: GRID_SIZE * GRID_SIZE }, (_, i) => i),
     rng,
-  ).slice(0, removeCount);
-  positions.forEach((pos) => {
+  );
+  let removed = 0;
+  for (const pos of positions) {
+    if (removed >= removeCount) break;
     const r = Math.floor(pos / GRID_SIZE), c = pos % GRID_SIZE;
+    const backup = puzzle[r][c];
     puzzle[r][c] = 0;
-  });
+    if (countSolutions(puzzle, 2) === 1) {
+      removed++;
+    } else {
+      puzzle[r][c] = backup;
+    }
+  }
   return puzzle;
 }
 
@@ -109,4 +137,4 @@ function boardMatchesSolution(board, solution) {
   return true;
 }
 
-module.exports = { generateDailyPuzzle, boardMatchesSolution, DAILY_REMOVE, GRID_SIZE, BOX_ROWS, BOX_COLS };
+module.exports = { generateDailyPuzzle, boardMatchesSolution, countSolutions, DAILY_REMOVE, GRID_SIZE, BOX_ROWS, BOX_COLS };
