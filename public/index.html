@@ -99,6 +99,7 @@
       <button onclick="openSudokuDailyWindow(); closeStartMenu()">📅 Sudoku Diário<span class="sdd-badge-dot"></span></button>
       <button onclick="openTermoDailyWindow(); closeStartMenu()">🟩 Termo Diário<span class="tdd-badge-dot"></span></button>
       <button onclick="openWindow('win-2048'); init2048Game(); closeStartMenu()">🧩 2048</button>
+      <button onclick="openDoomWindow(); closeStartMenu()">👹 DOOM (1993)</button>
       <button onclick="openWindow('win-gamerank'); loadGameRank('snake'); closeStartMenu()">🎮 Rank Jogos</button>
       <hr />
       <button onclick="openNotepadWindow(); closeStartMenu()">📝 Bloco de Notas</button>
@@ -200,6 +201,10 @@
     <div class="appgrid-icon" onclick="openWindow('win-2048'); init2048Game()">
       <div class="icon-img">🧩</div>
       <div class="icon-label">2048</div>
+    </div>
+    <div class="appgrid-icon" onclick="openDoomWindow()">
+      <div class="icon-img">👹</div>
+      <div class="icon-label">DOOM (1993)</div>
     </div>
     <div class="appgrid-icon" onclick="openWindow('win-gamerank'); loadGameRank('snake')">
       <div class="icon-img">🎮</div>
@@ -926,6 +931,26 @@
     </div>
   </div>
 
+  <!-- ══ WINDOW: DOOM (1993 MS-DOS) ══ -->
+  <div class="win95-window" id="win-doom" style="left:110px;top:35px;width:668px;display:none">
+    <div class="win95-titlebar" onmousedown="startDrag(event,'win-doom')">
+      <span class="win95-title">👹 DOOM (1993 - MS-DOS)</span>
+      <div class="win95-controls">
+        <button class="win95-btn-ctrl" onclick="minimizeWindow('win-doom')">_</button>
+        <button class="win95-btn-ctrl" onclick="closeWindow('win-doom'); stopDoomGame()">✕</button>
+      </div>
+    </div>
+    <div class="win95-body">
+      <div id="doom-status" class="info-box" style="font-size:12px;margin-bottom:6px;text-align:center;display:none"></div>
+      <div class="canvas-container doom-container" id="doom-container">
+        <canvas id="doom-canvas" width="640" height="400" tabindex="0"></canvas>
+      </div>
+      <div class="info-box" style="font-size:11px;margin-top:6px">
+        <strong>Controles originais do DOS:</strong> Setas = Mover/Girar | <strong>CTRL</strong> = Atirar | <strong>ESPAÇO</strong> = Abrir Portas / Usar | <strong>SHIFT</strong> = Correr | <strong>ALT + Setas</strong> = Strafe | <strong>1–7</strong> = Trocar Arma | <strong>ENTER</strong> = Confirmar no menu. (Clique dentro da tela do jogo para focar o teclado).
+      </div>
+    </div>
+  </div>
+
   <!-- ══ WINDOW: BLOCO DE NOTAS ══ -->
   <div class="win95-window notepad-window" id="win-notepad" style="left:220px;top:70px;width:480px;height:420px;display:none">
     <!-- openWindow() força style.display="block" inline no elemento da janela
@@ -1412,6 +1437,10 @@
           <div class="icon-img">🧩</div>
           <div class="icon-label">2048</div>
         </div>
+        <div class="folder-icon" ondblclick="openDoomWindow()">
+          <div class="icon-img">👹</div>
+          <div class="icon-label">DOOM (1993)</div>
+        </div>
       </div>
     </div>
   </div>
@@ -1596,6 +1625,7 @@
   <script src="js/termo-daily.js"></script>
   <script src="js/spider.js"></script>
   <script src="js/2048.js"></script>
+  <script src="js/doom.js"></script>
   <script src="js/farm.js"></script>
   <script src="js/blackjack.js"></script>
   <script src="js/roulette.js"></script>

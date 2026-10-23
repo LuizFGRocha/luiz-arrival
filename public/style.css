@@ -1259,6 +1259,23 @@ body.cursor-wait * {
   /* Mantém os gráficos nítidos */
 }
 
+/* ─── DOOM (1993 MS-DOS) ─────────────────── */
+.canvas-container.doom-container {
+  width: 644px;
+  height: 404px;
+  background: #000;
+  overflow: hidden;
+  position: relative;
+}
+
+#doom-canvas,
+.doom-container canvas {
+  width: 640px !important;
+  height: 400px !important;
+  display: block;
+  outline: none;
+}
+
 #at-canvas {
   background-color: var(--win-black);
   /* Mira pequena estilo FPS (cruz fina com vão no centro) no lugar do
