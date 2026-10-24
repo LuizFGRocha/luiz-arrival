@@ -4124,9 +4124,19 @@ function showAchievementToast(achievementIds) {
 const RELEASE_NOTES_SEEN_KEY = "luizos_release_notes_seen";
 const RELEASE_NOTES = [
   {
+    version: "2.27.0",
+    date: "23/10/2026",
+    isNew: true,
+    title: "Novo jogo clássico: DOOM (1993) 👹",
+    items: [
+      "👹 O DOOM Shareware original de 1993 (Episódio 1 completo — Knee-Deep in the Dead) agora roda direto dentro de uma janela do LuizOS 95!",
+      "🕹️ Acesso pelo Menu Iniciar, grade de aplicativos ou pasta \"Jogos\" — sem custo de fichas, só abrir e jogar com som e controles clássicos de MS-DOS.",
+    ],
+  },
+  {
     version: "2.26.1",
     date: "21/10/2026",
-    isNew: true,
+    isNew: false,
     title: "Correção no Sudoku Diário: solução única garantida 📅🔢",
     items: [
       "🐛 Corrigido: o gerador do Sudoku Diário agora garante que todo puzzle tenha exatamente 1 solução única — acabaram os casos em que sobravam duas respostas possíveis e o jogo contava derrota.",
