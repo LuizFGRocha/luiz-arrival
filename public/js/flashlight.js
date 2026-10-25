@@ -1,5 +1,5 @@
 // ==========================================
-// MODO ESCURO (MEME) — apaga tudo e o mouse vira uma lanterna
+// MODO ESCURO — escurece a tela e ilumina a área ao redor do ponteiro
 // ==========================================
 // Não troca a paleta de cores: só cobre a tela com uma camada preta que tem um
 // "furo" de luz seguindo o ponteiro. A camada tem pointer-events: none, então

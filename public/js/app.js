@@ -4127,9 +4127,9 @@ const RELEASE_NOTES = [
     version: "2.28.0",
     date: "25/10/2026",
     isNew: true,
-    title: "Modo Escuro (de verdade) 🔦",
+    title: "Modo Escuro 🔦",
     items: [
-      "🔦 Novo Modo Escuro: em vez de trocar as cores, ele apaga a luz do LuizOS inteiro — e o mouse vira uma lanterna. Boa sorte achando o botão de apostar.",
+      "🔦 Novo Modo Escuro: reduz a luminosidade de todo o LuizOS 95 e mantém iluminada apenas a área ao redor do ponteiro, para mais conforto visual em ambientes com pouca luz.",
       "💡 Liga/desliga pelo Menu Iniciar ou clicando com o botão direito na área de trabalho (seção \"Aparência\"). A escolha fica salva no navegador.",
     ],
   },
