@@ -4124,9 +4124,19 @@ function showAchievementToast(achievementIds) {
 const RELEASE_NOTES_SEEN_KEY = "luizos_release_notes_seen";
 const RELEASE_NOTES = [
   {
+    version: "2.28.0",
+    date: "25/10/2026",
+    isNew: true,
+    title: "Modo Escuro (de verdade) 🔦",
+    items: [
+      "🔦 Novo Modo Escuro: em vez de trocar as cores, ele apaga a luz do LuizOS inteiro — e o mouse vira uma lanterna. Boa sorte achando o botão de apostar.",
+      "💡 Liga/desliga pelo Menu Iniciar ou clicando com o botão direito na área de trabalho (seção \"Aparência\"). A escolha fica salva no navegador.",
+    ],
+  },
+  {
     version: "2.27.0",
     date: "23/10/2026",
-    isNew: true,
+    isNew: false,
     title: "Novo jogo clássico: DOOM (1993) 👹",
     items: [
       "👹 O DOOM Shareware original de 1993 (Episódio 1 completo — Knee-Deep in the Dead) agora roda direto dentro de uma janela do LuizOS 95!",

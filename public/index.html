@@ -51,6 +51,8 @@
     <button class="ctx-wallpaper-item" data-wp="luiz" onclick="applyWallpaper('luiz')">Luiz</button>
     <button class="ctx-wallpaper-item" data-wp="custom" onclick="openCustomColorPicker()">Personalizado</button>
     <div id="ctx-wallpapers-purchased"></div>
+    <div class="ctx-section-label">Aparência</div>
+    <button class="ctx-wallpaper-item flashlight-toggle-label" onclick="toggleFlashlightMode()">🔦 Modo Escuro</button>
     <div class="ctx-section-label">Pastas</div>
     <button class="ctx-wallpaper-item" onclick="resetIconPositions()">Redefinir posição das pastas</button>
   </div>
@@ -105,6 +107,7 @@
       <button onclick="openNotepadWindow(); closeStartMenu()">📝 Bloco de Notas</button>
       <button onclick="openCalculatorWindow(); closeStartMenu()">🧮 Calculadora</button>
       <button onclick="openPaintWindow(); closeStartMenu()">🎨 Paint 95</button>
+      <button onclick="toggleFlashlightMode(); closeStartMenu()"><span class="flashlight-toggle-label">🔦 Modo Escuro</span></button>
       <hr />
       <button onclick="openWindow('win-login'); closeStartMenu()">🔑 Login / Trocar Conta</button>
     </div>
@@ -1634,6 +1637,7 @@
   <script src="js/notepad.js"></script>
   <script src="js/calculator.js"></script>
   <script src="js/paint.js"></script>
+  <script src="js/flashlight.js"></script>
   <script>
     function setGameRankTabActive(game) {
       document.querySelectorAll('#win-gamerank .rank-tab').forEach(t => {
